@@ -1,0 +1,85 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    margin: 10px;
+    background-color: black;
+    font-family: "Public Sans";
+    color: white;
+}
+
+.hero-img{
+    width: calc(100% - 10px);
+    height: auto;
+    object-fit: cover;
+    margin-top: 20px;
+
+}
+
+.heading{
+    color: white;
+    font-size: 40pt;
+    font-weight: 550;
+    margin-top: 20px;
+}
+
+.main-1{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+}
+
+.main-2{
+    color: white;
+    margin-top: 30px;
+    padding: 0 50px;
+    font-weight: 400;
+}
+
+.intro{
+    font-weight: 600;
+}
+
+.portfolio{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 40px;
+    font-size: 40pt;
+    font-weight: 550;
+}
+
+.photo-info{
+    margin-top: 10px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+
+.photo-no{
+    font-size: 45px;
+}
+
+.photo-details{
+    font-size: 22px;
+    margin-left: 16px;
+}
+
+.photo-location{
+    font-size: 15px;
+    font-weight: 300;
+    margin-top: 3px;
+}
+
+.photo{
+    width: 80vw;
+    height: auto;
+    margin-top: 30px;
+    align-self: center;
+}
