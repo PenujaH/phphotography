@@ -152,7 +152,7 @@ body {
 }
 
 .cta{
-    font-size: 85pt;
+    font-size: 80pt;
     font-weight: 700;
     margin-bottom: 130px;
 }
@@ -163,7 +163,7 @@ body {
 }
 
 .cta-section img{
-    width: 65%;
+    width: 90%;
     object-fit: cover;
     margin-top: 50px;
     justify-self: center;
