@@ -8,6 +8,7 @@ body {
   background-color: black;
   font-family: "Public Sans";
   color: white;
+  overflow-x: hidden;
 }
 
 .hero-img {
@@ -64,6 +65,7 @@ body {
 
 .photo-no {
   font-size: 45px;
+  margin-left: 20px;
 }
 
 .photo-details {
@@ -167,6 +169,11 @@ body {
     object-fit: cover;
     margin-top: 50px;
     justify-self: center;
+}
+
+.glightbox{
+    color: white;
+    text-decoration: none;
 }
 
 @media (min-width: 500px) {
