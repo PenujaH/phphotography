@@ -110,7 +110,7 @@
         <img src="photos/my-pic-1.png" data-aos="fade-left">
     </secton>
 
-    <button id="music-toggle" style="position: fixed; bottom: 20px; right: 20px; z-index: 999; background-color:
+    <button id="music-toggle" style="display: none; bottom: 20px; right: 20px; z-index: 999; background-color:
      black; border-radius: 30px; border: 1px solid white; padding: 10px; color: white;">▶  Enable Music</button>
 
     <audio id="background-music" src="music/better-day-186374.mp3" autoplay muted loop>
@@ -119,52 +119,45 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    <script>
-        AOS.init({ duration: 1000, once: true });
-        const lightbox = GLightbox({ touchNavigation: true, loop: true });
-    </script>
     
     <script>
-        const music = document.getElementById('background-music');
-        const toggleButton = document.getElementById('music-toggle');
-        
-        // Initial state: music is technically playing (autoplay), but muted
-        let isPlaying = false; 
+    // 1. Initialize Libraries (must only be done once)
+    AOS.init({ duration: 1000, once: true });
+    const lightbox = GLightbox({ touchNavigation: true, loop: true });
 
-        const toggleMusic = () => {
-            if (music.paused || music.muted) {
-                // If paused or muted, we un-mute and play
-                music.muted = false;
-                music.play().catch(error => {
-                    console.log("Play failed, but music should be unmuted after user interaction.");
-                });
-                toggleButton.innerHTML = '⏸ Pause Music';
-                isPlaying = true;
-            } else {
-                // If audible and playing, we pause it
-                music.pause();
-                toggleButton.innerHTML = '▶  Play Music';
-                isPlaying = false;
-            }
-        };
+    // 2. Music Control Logic
+    const music = document.getElementById('background-music');
+    const toggleButton = document.getElementById('music-toggle');
+    
+    // Set initial state: The <audio> tag already has 'autoplay muted loop'
+    // We explicitly pause it here to override the autoplay, keeping it ready.
+    music.pause();
+    
+    // Disable the button since control is now fully automatic via the gallery
+    toggleButton.innerHTML = '🖼️ Gallery Music Control (Auto)'; 
+    toggleButton.disabled = true; 
 
-        // Add listener to the button
-        toggleButton.addEventListener('click', toggleMusic);
 
-        // Update button text when music state changes
-        music.onplaying = () => {
-            if (!music.muted) {
-                toggleButton.innerHTML = '⏸ Pause Music';
-                isPlaying = true;
-            }
-        };
-        
-        music.onpause = () => {
-             if (isPlaying) {
-                toggleButton.innerHTML = '🎶 Play Music';
-                isPlaying = false;
-             }
-        };
-    </script>
+    // --- GLightbox Event Listeners ---
+
+    // 1. Play music when GLightbox is opened
+    lightbox.on('open', () => {
+        // Unmute and Play are executed together
+        music.muted = false; 
+        music.play().catch(error => {
+            // This is a common error catch, but the music should play now
+            // because GLightbox opening is treated as a user interaction.
+            console.log("Music play failed when gallery opened, but unmuted.");
+        });
+        toggleButton.innerHTML = '🎶 Gallery Music Active';
+    });
+
+    // 2. Pause and mute music when GLightbox is closed
+    lightbox.on('close', () => {
+        music.pause(); 
+        music.muted = true; 
+        toggleButton.innerHTML = '🖼️ Gallery Music Control (Auto)';
+    });
+</script>
 </body>
 </html>
