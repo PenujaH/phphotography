@@ -1,290 +1,42 @@
-* {
-  margin: 0;
-  padding: 0;
+@font-face {
+  font-family: 'Big Calson Roman';
+  src: url('fonts/Big\ Caslon\ Roman.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
-body {
-  margin: 20px;
-  background-color: black;
-  font-family: "Public Sans";
-  color: white;
-  overflow-x: hidden;
+*{
+padding: 0;
+margin: 0;
 }
 
-.hero-img {
-  width: calc(100% - 10px);
-  height: auto;
-  object-fit: cover;
-  margin-top: 20px;
-}
-
-.heading {
-  color: white;
-  font-size: 50pt;
-  font-weight: 550;
-  margin-top: 20px;
-}
-
-.main-1 {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: start;
-  align-items: start;
-}
-
-.main-2 {
-  color: white;
-  margin-top: 30px;
-  padding: 0 45px 0 80px;
-  font-weight: 400;
-  font-size: 18px;
-}
-
-.intro {
+.logo{
+  font-family: 'Big Calson Roman';
+  font-size: 20px;
   font-weight: 600;
 }
 
-.portfolio {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 40px;
-  font-size: 40pt;
-  font-weight: 550;
-}
-
-.photo-info {
-  margin-top: 10px;
+nav{
+  position: relative;
+  color: white;
+  background-color: #181818;
+  padding: 30px 20px;
   display: flex;
   justify-content: start;
-  align-items: center;
+
 }
 
-.photo-no {
-  font-size: 45px;
-  margin-left: 20px;
-}
-
-.photo-details {
-  font-size: 22px;
-  margin-left: 16px;
-}
-
-.photo-location {
-  font-size: 15px;
-  font-weight: 300;
-  margin-top: 3px;
-}
-
-.p-name {
-  width: 100%;
-  margin-top: 20px;
-}
-
-.photo {
-  height: auto;
-  width: 90vw;
-  max-width: 400px;
-  max-height: 600px;
-  object-fit: cover;
-  margin-top: 30px;
-  align-self: center;
-  margin-left: 20px;
-}
-
-.images {
+.nav-list{
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  list-style: none;
+  justify-self: flex-end;
+  position: absolute; 
+  top: 50%;
+  right: 90px;
+  transform: translateY(-50%);
 }
 
-.fav-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin-top: 30px;
-}
-
-.fav-section p{
-    font-size: 35pt;
-    font-weight: 700;
-}
-
-.fav-section img{
-    margin-top: 30px;
-    width: 95%;
-    height: 600px;
-    object-fit: cover;
-}
-
-.skills-section{
-    margin-top: 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: start;
-    justify-content: start;
-}
-
-.skills-section p{
-    margin-top: 20px;
-    font-size: 40px;
-    font-weight: 700;
-}
-
-.skills-section ul{
-    margin-top: 20px;
-    font-size: 18px;
-    margin-left: 30px;
-}
-
-.skills-section img{
-    width: 95%;
-    height: 600px;
-    object-position: top;
-    object-fit: cover;
-}
-
-.cta-section{
-    margin-top: 50px;
-
-}
-
-.cta{
-    font-size: 65pt;
-    font-weight: 700;
-    margin-bottom: 130px;
-}
-
-.social{
-    font-size: 16pt;
-    margin-top: 20px;
-}
-
-.cta-section img{
-    width: 90%;
-    object-fit: cover;
-    margin-top: 50px;
-    justify-self: center;
-}
-
-.glightbox{
-    color: white;
-    text-decoration: none;
-}
-
-@media (min-width: 500px) {
-  .heading,
-  .p-name {
-    font-size: 60pt;
-  }
-
-  .main-2 {
-    width: 300px;
-  }
-
-  .images {
-    column-count: 3;
-    column-gap: 20px;
-    width: 100%;
-    margin-top: 40px;
-  }
-
-  .image-div {
-    break-inside: avoid;
-    margin-bottom: 20px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-
-  .image-div:hover {
-    transform: scale(1.03);
-  }
-
-  .photo {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-  }
-
- 
-}
-
-@media (min-width: 700px) {
-    .fav-section, .skills-section{
-        padding: 0 150px;
-    }
-
-
-}
-
-@media (min-width: 1000px) {
-  body {
-    padding: 30px;
-  }
-
-  .heading,
-  .p-name {
-    font-size: 80pt;
-    font-weight: 650;
-  }
-
-  main {
-    display: flex;
-    align-items: center;
-  }
-
-  .main-2 {
-    width: 40vw;
-  }
-
-  .fav-section{
-    padding: 0;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-
-  .fav-section img{
-    width: 40%;
-    box-sizing: border-box;
-  }
-
-  .fav-section p{
-    width: 50%;
-    box-sizing: border-box;
-  }
-
-  .skills-section {
-    flex-direction: row;
-    padding: 0;
-  }
-
-  .skills-section img{
-    width: 40%;
-  }
-
-  .skills-section div{
-    margin-left: 30px;
-  }
-
-  .cta-section{
-    display: flex;
-  }
-
-  .cta{
-    margin-right: 70px;
-  }
-
-  .cta-section img{
-    width: 50%;
-    height: 500px;
-    margin-left: 50px;
-    align-self: flex-end;
-    
-  }
+.nav-list li{
+  font-size: 18px;
+  margin-left: 50px;
 }

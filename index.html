@@ -1,163 +1,22 @@
 <!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Penuja Hansith</title>
-
+    <title>Penuja</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" rel="stylesheet" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-</head>
-<body>
+  </head>
+  <body>
+    <nav>
+        <p class="logo">PENUJA HANSITH</p>
+        <ul class="nav-list">
+            <li>Street</li>
+            <li>Product</li>
+            <li>Nature</li>
+        </ul>
+    </nav>
     <main>
-        <div class="main-1">
-            <p class="heading" data-aos="fade-up" data-aos-delay="0">PENUJA<br>HANSITH</p>
-            <img class="hero-img" data-aos="fade-right" data-aos-delay="1000" src="photos/studio.png">
-        </div>
-        <div class="main-2" data-aos="fade-up" data-aos-delay="500">
-            <p class="intro">STUDENT<br>PHOTOGRAPHER</p><br>
-            <p>Too bad for Landscape, Too close for Wildlife, I'm a beginner photographer trying to do Street Photography. </p>
-        </div>
-        </div>
+
     </main>
-
-    <section class="portfolio">
-        <p class="p-name" data-aos="fade-up">PORTFOLIO</p>
-
-        <div class="images">
-            <div class="image-div" data-aos="fade-right">
-                <a href="photos/photo10.jpg" class="glightbox" data-gallery="portfolio">
-                    <img class="photo" src="photos/photo10.jpg" alt="Sample 1">
-                </a>
-                <div class="photo-info">
-                    <p class="photo-no">01</p>
-                    <div class="photo-details">
-                        <p>The Cart Bed</p>
-                        <p class="photo-location">2025, Pettah</p>
-                    </div>
-                </div>
-            </div>
-
-               <div class="image-div" data-aos="fade-left">
-                <a href="photos/photo12.jpg" class="glightbox" data-gallery="portfolio">
-                    <img class="photo" src="photos/photo12.jpg" alt="Sample 3">
-                </a>
-                <div class="photo-info">
-                    <p class="photo-no">03</p>
-                    <div class="photo-details">
-                        <p>Wall of Almonds</p>
-                        <p class="photo-location">2025, Pettah</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="image-div" data-aos="fade-right">
-                <a href="photos/photo11.jpg" class="glightbox" data-gallery="portfolio">
-                    <img class="photo" src="photos/photo11.jpg" alt="Sample 2">
-                </a>
-                <div class="photo-info">
-                    <p class="photo-no">02</p>
-                    <div class="photo-details">
-                        <p>Blue Door Potrait</p>
-                        <p class="photo-location">2025, Pettah</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="image-div" data-aos="fade-left">
-                <a href="photos/photo13.jpg" class="glightbox" data-gallery="portfolio">
-                    <img class="photo" src="photos/photo13.jpg" alt="Sample 4">
-                </a>
-                <div class="photo-info">
-                    <p class="photo-no">04</p>
-                    <div class="photo-details">
-                        <p>Density, Colombo</p>
-                        <p class="photo-location">2025, Pettah</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="fav-section">
-        <p class="fav-desc" data-aos="fade-up">STREET PHOTOGRAPHY REVEAL RAW LIFE AND UNFILTERED MOMENT. I ENJOY CAPTURING ENERGY, EMOTION, AND HUMANITY IN MOTION, FINDING BEAUTY WITHIN EVERYDAY FLOW.</p>
-        <img class="fav-pic" data-aos="fade-left" src="photos/photo14.jpg">
-    </section>
-
-    <section class="skills-section">
-        <img class="my-pic-1" src="photos/my-pic-2.png" data-aos="fade-right">
-        <div data-aos="zoom-in">
-            <p>SKILLS</p>
-            <ul>
-                <li>Product Photography</li>
-                <li>Potrait Photography</li>
-                <li>Programming & Tech</li>
-            </ul>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div>
-            <p class="cta" data-aos="fade-up">GET IN<br>TOUCH</p>
-            <p class="social" data-aos="zoom-in"><b>EMAIL</b><br><a style="color: white; text-decoration: none;" href="mailto:penujahansthinfo@gmail.com">penujahansithinfo@gmail.com</a></p>
-            <p class="social" data-aos="zoom-in"><b>INSTAGRAM</b><br><a style="color: white; text-decoration: none;" href="https://www.instagram.com/penuja_hansith/">@penuja_hansith</a></p>
-        </div>
-        <img src="photos/my-pic-1.png" data-aos="fade-left">
-    </secton>
-
-    <button id="music-toggle" style="display: none; bottom: 20px; right: 20px; z-index: 999; background-color:
-     black; border-radius: 30px; border: 1px solid white; padding: 10px; color: white;">▶  Enable Music</button>
-
-    <audio id="background-music" src="music/better-day-186374.mp3" autoplay muted loop>
-        Your browser does not support the audio element.
-    </audio>
-
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
-    
-    <script>
-    // 1. Initialize Libraries (must only be done once)
-    AOS.init({ duration: 1000, once: true });
-    const lightbox = GLightbox({ touchNavigation: true, loop: true });
-
-    // 2. Music Control Logic
-    const music = document.getElementById('background-music');
-    const toggleButton = document.getElementById('music-toggle');
-    
-    // Set initial state: The <audio> tag already has 'autoplay muted loop'
-    // We explicitly pause it here to override the autoplay, keeping it ready.
-    music.pause();
-    
-    // Disable the button since control is now fully automatic via the gallery
-    toggleButton.innerHTML = '🖼️ Gallery Music Control (Auto)'; 
-    toggleButton.disabled = true; 
-
-
-    // --- GLightbox Event Listeners ---
-
-    // 1. Play music when GLightbox is opened
-    lightbox.on('open', () => {
-        // Unmute and Play are executed together
-        music.muted = false; 
-        music.play().catch(error => {
-            // This is a common error catch, but the music should play now
-            // because GLightbox opening is treated as a user interaction.
-            console.log("Music play failed when gallery opened, but unmuted.");
-        });
-        toggleButton.innerHTML = '🎶 Gallery Music Active';
-    });
-
-    // 2. Pause and mute music when GLightbox is closed
-    lightbox.on('close', () => {
-        music.pause(); 
-        music.muted = true; 
-        toggleButton.innerHTML = '🖼️ Gallery Music Control (Auto)';
-    });
-</script>
-</body>
+  </body>
 </html>
