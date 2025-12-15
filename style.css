@@ -1,48 +1,113 @@
 @font-face {
   font-family: 'Big Calson Roman';
-  src: url('fonts/Big\ Caslon\ Roman.ttf') format('truetype');
+  src: url('fonts/Big Caslon Roman.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
 
-*{
-padding: 0;
-margin: 0;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.logo{
+/* ---------- NAV ---------- */
+nav {
+  position: relative;
+  background: #181818;
+  color: white;
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
   font-family: 'Big Calson Roman';
   font-size: 20px;
   font-weight: 600;
 }
 
-nav{
+.menu-btn {
+  display: none;
+  margin-left: auto;
+  width: 28px;
+  height: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
   position: relative;
-  color: white;
-  background-color: #181818;
-  padding: 30px 20px;
-  display: flex;
-  justify-content: start;
-
 }
 
-.nav-list{
-  display: flex;
+.menu-btn span {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: white;
+  transition: 0.3s ease;
+}
+
+.menu-btn span:nth-child(1) { top: 0; }
+.menu-btn span:nth-child(2) { top: 10px; }
+.menu-btn span:nth-child(3) { bottom: 0; }
+
+.menu-btn.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 10px;
+}
+
+.menu-btn.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-btn.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  bottom: 10px;
+}
+
+/* ---------- NAV LIST ---------- */
+.nav-list {
   list-style: none;
-  justify-self: flex-end;
-  position: absolute; 
-  top: 50%;
-  right: 90px;
-  transform: translateY(-50%);
+  display: flex;
+  margin-left: auto;
 }
 
-.nav-list li{
+.nav-list li {
   font-size: 18px;
   margin-left: 50px;
+  cursor: pointer;
 }
 
-img{
-  width: 100% !important;
-  margin: 0;
-  padding: 0;
+/* ---------- IMAGES ---------- */
+img {
+  display: block;
+  width: 100%;
+}
+
+/* ---------- MOBILE ---------- */
+@media (max-width: 768px) {
+  .menu-btn {
+    display: block;
+  }
+
+  .nav-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #181818;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 20px 0;
+  }
+
+  .nav-list li {
+    margin: 16px 0;
+    font-size: 18px;
+  }
+
+  .nav-list.active {
+    display: flex;
+  }
 }

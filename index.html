@@ -1,25 +1,46 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Penuja</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <nav>
-        <p class="logo">PENUJA HANSITH</p>
-        <ul class="nav-list">
-            <li>Street</li>
-            <li>Product</li>
-            <li>Nature</li>
-        </ul>
-    </nav>
-    <main>
-        <img src="photos/IMG_9132 copy.jpg">
-        <img src="photos/IMG_9158 copy.jpg">
-        <img src="photos/IMG_9715 copy.jpg">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Penuja</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-    </main>
-  </body>
+  <nav>
+    <p class="logo">PENUJA HANSITH</p>
+
+    <!-- Hamburger -->
+    <button class="menu-btn" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <ul class="nav-list">
+      <li>Street</li>
+      <li>Product</li>
+      <li>Nature</li>
+    </ul>
+  </nav>
+
+  <main>
+    <img src="photos/IMG_9132 copy.jpg" alt="">
+    <img src="photos/IMG_9158 copy.jpg" alt="">
+    <img src="photos/IMG_9715 copy.jpg" alt="">
+  </main>
+
+  <!-- JS -->
+  <script>
+    const menuBtn = document.querySelector('.menu-btn');
+    const navList = document.querySelector('.nav-list');
+
+    menuBtn.addEventListener('click', () => {
+      menuBtn.classList.toggle('active');
+      navList.classList.toggle('active');
+    });
+  </script>
+
+</body>
 </html>
