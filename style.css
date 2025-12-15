@@ -40,3 +40,9 @@ nav{
   font-size: 18px;
   margin-left: 50px;
 }
+
+img{
+  width: 100% !important;
+  margin: 0;
+  padding: 0;
+}
