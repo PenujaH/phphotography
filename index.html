@@ -8,10 +8,10 @@
 </head>
 <body>
 
+  <!-- NAV -->
   <nav>
     <p class="logo">PENUJA HANSITH</p>
 
-    <!-- Hamburger -->
     <button class="menu-btn" aria-label="Menu">
       <span></span>
       <span></span>
@@ -25,20 +25,58 @@
     </ul>
   </nav>
 
-  <main>
-    <img src="photos/IMG_9132 copy.jpg" alt="">
-    <img src="photos/IMG_9158 copy.jpg" alt="">
-    <img src="photos/IMG_9715 copy.jpg" alt="">
+  <!-- CAROUSEL -->
+  <main class="carousel-container">
+    <div class="carousel">
+      <img src="photos/IMG_9132 copy.jpg" alt="">
+      <img src="photos/IMG_9158 copy.jpg" alt="">
+      <img src="photos/IMG_9715 copy.jpg" alt="">
+      <img src="photos/IMG_9720 copy.jpg" alt="">
+      <img src="photos/IMG_9773 copy.jpg" alt="">
+      <img src="photos/IMG_9775 copy.jpg" alt="">
+      <img src="photos/IMG_9779 copy.jpg" alt="">
+    </div>
+
+    <button class="nav-btn prev">&#10094;</button>
+    <button class="nav-btn next">&#10095;</button>
   </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2025 Penuja</p>
+  </footer>
 
   <!-- JS -->
   <script>
+    /* MENU */
     const menuBtn = document.querySelector('.menu-btn');
     const navList = document.querySelector('.nav-list');
 
     menuBtn.addEventListener('click', () => {
       menuBtn.classList.toggle('active');
       navList.classList.toggle('active');
+    });
+
+    /* CAROUSEL */
+    const carousel = document.querySelector('.carousel');
+    const images = document.querySelectorAll('.carousel img');
+    const prev = document.querySelector('.prev');
+    const next = document.querySelector('.next');
+
+    let index = 0;
+
+    function updateCarousel() {
+      carousel.style.transform = `translateX(-${index * 100}vw)`;
+    }
+
+    next.addEventListener('click', () => {
+      index = (index + 1) % images.length;
+      updateCarousel();
+    });
+
+    prev.addEventListener('click', () => {
+      index = (index - 1 + images.length) % images.length;
+      updateCarousel();
     });
   </script>
 

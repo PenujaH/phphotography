@@ -1,8 +1,6 @@
 @font-face {
   font-family: 'Big Calson Roman';
   src: url('fonts/Big Caslon Roman.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
 }
 
 * {
@@ -11,18 +9,23 @@
   box-sizing: border-box;
 }
 
+body {
+  background-color: #181818;
+  color: white;
+  overflow-x: hidden; /* prevent horizontal scroll */
+  font-family: 'Big Calson Roman', serif;
+}
+
 /* ---------- NAV ---------- */
 nav {
   position: relative;
   background: #181818;
-  color: white;
   padding: 30px 20px;
   display: flex;
   align-items: center;
 }
 
 .logo {
-  font-family: 'Big Calson Roman';
   font-size: 20px;
   font-weight: 600;
 }
@@ -36,10 +39,6 @@ nav {
   border: none;
   cursor: pointer;
   position: relative;
-}
-
-body{
-  background-color: #181818;
 }
 
 .menu-btn span {
@@ -82,10 +81,53 @@ body{
   cursor: pointer;
 }
 
-/* ---------- IMAGES ---------- */
-img {
+/* ---------- CAROUSEL ---------- */
+.carousel-container {
+  width: 100vw;  
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  width: 300vw; /* number of images * 100vw */
+  transition: transform 0.35s ease;
+}
+
+.carousel img {
+  width: 100vw;  
+  height: auto;   
+  flex-shrink: 0;
   display: block;
-  width: 100%;
+  background: #181818;
+}
+
+/* ---------- NAV BUTTONS ---------- */
+.nav-btn {
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  border: none;
+  color: white;
+  font-size: 28px;
+  padding: 6px 12px;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* ---------- FOOTER ---------- */
+footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.7;
+  background: #181818; /* optional */
 }
 
 /* ---------- MOBILE ---------- */
@@ -106,16 +148,12 @@ img {
     padding: 20px 0;
   }
 
-  .nav-list li {
-    margin: 16px 0;
-    font-size: 18px;
-  }
-
   .nav-list.active {
     display: flex;
   }
 
-  img{
-    margin-top: 5px;
+  .nav-list li {
+    margin: 16px 0;
+    font-size: 18px;
   }
 }
