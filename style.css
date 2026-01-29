@@ -27,7 +27,7 @@
 .name{
     position: absolute;
     top: 40px;
-    left: 40px;
+    left: 30px;
     font-size: 21.3px;
     font-weight: normal;
     color: white;
@@ -36,7 +36,7 @@
 .headline{
     position: absolute;
     bottom: 100px;
-    left: 50px;
+    left: 30px;
     color: white;
     font-weight: bold;
     font-size: 35px;
