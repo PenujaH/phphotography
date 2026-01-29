@@ -5,80 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Penuja</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 </head>
+
 <body>
-
-  <!-- NAV -->
-  <nav>
-    <p class="logo">PENUJA HANSITH</p>
-
-    <button class="menu-btn" aria-label="Menu">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <ul class="nav-list">
-      <li>Street</li>
-      <li>Product</li>
-      <li>Nature</li>
-    </ul>
-  </nav>
-
-  <!-- CAROUSEL -->
-  <main class="carousel-container">
-    <div class="carousel">
-      <img src="photos/IMG_9132 copy.jpg" alt="">
-      <img src="photos/IMG_9158 copy.jpg" alt="">
-      <img src="photos/IMG_9715 copy.jpg" alt="">
-      <img src="photos/IMG_9720 copy.jpg" alt="">
-      <img src="photos/IMG_9773 copy.jpg" alt="">
-      <img src="photos/IMG_9775 copy.jpg" alt="">
-      <img src="photos/IMG_9779 copy.jpg" alt="">
-    </div>
-
-    <button class="nav-btn prev">&#10094;</button>
-    <button class="nav-btn next">&#10095;</button>
+  <main>
+    <img class="main-img" src="photos/hero.png" alt="hero img">
+    <div class="main-text">
+      <p class="name">Penuja Hansith</p>
+      <p class="headline">The World Speaks.<br>I Just Listen.</p>
+      <svg class="menu" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#FFFFFF"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg>
+    </div> 
   </main>
-
-  <!-- FOOTER -->
-  <footer>
-    <p>© 2025 Penuja</p>
-  </footer>
-
-  <!-- JS -->
-  <script>
-    /* MENU */
-    const menuBtn = document.querySelector('.menu-btn');
-    const navList = document.querySelector('.nav-list');
-
-    menuBtn.addEventListener('click', () => {
-      menuBtn.classList.toggle('active');
-      navList.classList.toggle('active');
-    });
-
-    /* CAROUSEL */
-    const carousel = document.querySelector('.carousel');
-    const images = document.querySelectorAll('.carousel img');
-    const prev = document.querySelector('.prev');
-    const next = document.querySelector('.next');
-
-    let index = 0;
-
-    function updateCarousel() {
-      carousel.style.transform = `translateX(-${index * 100}vw)`;
-    }
-
-    next.addEventListener('click', () => {
-      index = (index + 1) % images.length;
-      updateCarousel();
-    });
-
-    prev.addEventListener('click', () => {
-      index = (index - 1 + images.length) % images.length;
-      updateCarousel();
-    });
-  </script>
 
 </body>
 </html>
